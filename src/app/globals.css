@@ -32,14 +32,14 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-ring: var(--ring);
   --color-input: var(--input);
-  
+
   /* Chart colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  
+
   /* Sidebar colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -49,12 +49,12 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
+
   /* Fonts */
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
-  
+
   /* Border radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -68,15 +68,15 @@
 :root {
   /* ===== OLYMPUS THEME - LIGHT MODE ===== */
   /* Extracted from design: Yellow/Gold circle + Beige background */
-  
+
   /* Base radius */
   --radius: 0.5rem;
-  
+
   /* Font families */
   --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-heading: 'Poppins', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-  
+
   /* Font sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -88,19 +88,19 @@
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
   --font-size-6xl: 3.75rem;
-  
+
   /* Font weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  
+
   /* Line heights */
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-  
+
   /* Letter spacing */
   --letter-spacing-tight: -0.025em;
   --letter-spacing-normal: 0;
@@ -108,51 +108,53 @@
   --letter-spacing-wider: 0.05em;
 
   /* ===== COLOR PALETTE ===== */
-  
+
   /* Primary - Yellow/Gold from the circle (#F8C538) */
   --primary: #F8C538;
   --primary-foreground: #000000;
   --primary-hover: #E5B330;
   --primary-light: #FFCE31;
-  
+
   /* Background - Beige/Cream (#E8E4DD) */
-  --background: #E8E4DD;
+  /* --background: #E8E4DD; */
+  --background: #ffff;
+
   --background-light: #F5F2ED;
   --background-dark: #D9D5CE;
-  
+
   /* Foreground - Dark text */
   --foreground: #1A1A1A;
   --foreground-muted: #4A4A4A;
   --foreground-subtle: #6B6B6B;
-  
+
   /* Secondary - Dark for labels/badges */
   --secondary: #1A1A1A;
   --secondary-foreground: #FFFFFF;
-  
+
   /* Accent - Same as primary for consistency */
   --accent: #F8C538;
   --accent-foreground: #000000;
-  
+
   /* Muted */
   --muted: #D9D5CE;
   --muted-foreground: #6B6B6B;
-  
+
   /* Cards and surfaces */
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  
+
   /* Border */
   --border: #C4C0B9;
   --border-light: #E0DCD5;
-  
+
   /* Input */
   --input: #E0DCD5;
-  
+
   /* Ring/Focus */
   --ring: #F8C538;
-  
+
   /* Status colors */
   --destructive: #E53E3E;
   --destructive-foreground: #FFFFFF;
@@ -160,14 +162,14 @@
   --success-foreground: #FFFFFF;
   --warning: #F8C538;
   --warning-foreground: #000000;
-  
+
   /* Chart colors - Yellow/Gold harmonious palette */
   --chart-1: #F8C538;
   --chart-2: #E5A020;
   --chart-3: #D18B10;
   --chart-4: #FFD966;
   --chart-5: #CC8800;
-  
+
   /* Sidebar - Slightly darker beige */
   --sidebar: #F5F2ED;
   --sidebar-foreground: #1A1A1A;
@@ -181,51 +183,51 @@
 
 .dark {
   /* ===== OLYMPUS THEME - DARK MODE ===== */
-  
+
   /* Background - Dark */
   --background: #0F0F0F;
   --background-light: #1A1A1A;
   --background-dark: #000000;
-  
+
   /* Foreground - Light text */
   --foreground: #EDEDED;
   --foreground-muted: #A0A0A0;
   --foreground-subtle: #6B6B6B;
-  
+
   /* Primary - Yellow/Gold (slightly brighter for dark mode) */
   --primary: #FFCE31;
   --primary-foreground: #000000;
   --primary-hover: #F8C538;
   --primary-light: #FFD966;
-  
+
   /* Secondary */
   --secondary: #2A2A2A;
   --secondary-foreground: #EDEDED;
-  
+
   /* Accent */
   --accent: #FFCE31;
   --accent-foreground: #000000;
-  
+
   /* Muted */
   --muted: #2A2A2A;
   --muted-foreground: #A0A0A0;
-  
+
   /* Cards and surfaces */
   --card: #1A1A1A;
   --card-foreground: #EDEDED;
   --popover: #1A1A1A;
   --popover-foreground: #EDEDED;
-  
+
   /* Border */
   --border: #3A3A3A;
   --border-light: #2A2A2A;
-  
+
   /* Input */
   --input: #2A2A2A;
-  
+
   /* Ring/Focus */
   --ring: #FFCE31;
-  
+
   /* Status colors */
   --destructive: #FC8181;
   --destructive-foreground: #000000;
@@ -233,14 +235,14 @@
   --success-foreground: #000000;
   --warning: #FFCE31;
   --warning-foreground: #000000;
-  
+
   /* Chart colors - Yellow/Gold palette for dark mode */
   --chart-1: #FFCE31;
   --chart-2: #FFD966;
   --chart-3: #F8C538;
   --chart-4: #E5A020;
   --chart-5: #FFE699;
-  
+
   /* Sidebar */
   --sidebar: #1A1A1A;
   --sidebar-foreground: #EDEDED;
@@ -256,6 +258,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
@@ -263,7 +266,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);

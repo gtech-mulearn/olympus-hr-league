@@ -8,9 +8,10 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/program", label: "Program" },
-  { href: "/finale", label: "Finale" },
-  { href: "/dates-contact", label: "Dates & Contact" },
+  { href: "/agenda", label: "Agenda" },
+  { href: "/participants", label: "Participants" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/contact", label: "Contact / Register" },
 ];
 
 export function Navbar() {
@@ -27,7 +28,7 @@ export function Navbar() {
               Olympus
             </span>
             <span className="hidden sm:inline text-sm text-muted-foreground">
-              – The HR League
+              : The HR Icon
             </span>
           </Link>
 
@@ -37,11 +38,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href
+                className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href
                     ? "text-primary"
                     : "text-foreground/70"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
           {/* CTA Button + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <Link
-              href="#register"
+              href="/contact"
               className="hidden sm:inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary-hover transition-colors"
             >
               Register Now
@@ -82,17 +82,16 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${
-                    pathname === link.href
+                  className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${pathname === link.href
                       ? "bg-primary/10 text-primary"
                       : "text-foreground/70 hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                href="#register"
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary-hover transition-colors"
               >
