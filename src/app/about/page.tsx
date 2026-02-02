@@ -1,14 +1,11 @@
+"use client"
 import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
-import type { Metadata } from "next";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { StackedCards } from "@/components/StackedCards";
+import { ElevatedEmblem } from "@/components/ElevatedEmblem";
 
-export const metadata: Metadata = {
-  title: "About Olympus: The HR Icon | µLearn",
-  description:
-    "Olympus is a flagship HR experience designed to bridge academic learning and industry practice through real-world sessions and expert-led discussions.",
-};
 
 const objectives = [
   {
@@ -34,56 +31,104 @@ const objectives = [
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center py-20 md:py-32 bg-muted/30 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+      {/* Hero Section - Reference Inspired Split Layout */}
+      <section className="relative min-h-screen flex flex-col justify-center items-center py-20 overflow-hidden bg-background">
+        {/* Inverted Pyramid Grid Background */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none z-0">
+          <div className="grid grid-cols-7 md:grid-cols-11 gap-px opacity-20">
+            {Array.from({ length: 121 }).map((_, i) => {
+              const row = Math.floor(i / 11);
+              const col = i % 11;
+              const center = 5;
+              const dist = Math.abs(col - center);
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Content */}
-            <div>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-background text-sm font-medium mb-6">
-                About Us
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-foreground leading-tight mb-6">
-                Olympus
-                <br />
+              // Create the stepped/pyramid logic
+              const isVisible = row <= 5 - dist;
+
+              if (!isVisible) return <div key={i} className="aspect-square" />;
+
+              return (
+                <div
+                  key={i}
+                  className="aspect-square bg-linear-to-b from-primary/60 to-primary/5 border border-primary/20 backdrop-blur-[2px]"
+                  style={{
+                    opacity: 1 - (row * 0.15),
+                    transform: `translateY(${row * 4}px)`
+                  }}
+                />
+              );
+            })}
+          </div>
+          {/* Subtle glow behind the pyramid */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[40%] bg-primary/10 blur-[120px] rounded-full -z-10" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+          {/* Top Label */}
+          <div className="mb-12 text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-foreground/40 font-bold mb-4">
+              Flagship Initiative
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-12 bg-primary/30" />
+              <span className="text-sm font-medium text-foreground tracking-widest">OLYMPUS 2026</span>
+              <div className="h-px w-12 bg-primary/30" />
+            </div>
+          </div>
+
+          {/* Central Asset Container */}
+          <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] flex items-center justify-center mb-16">
+            <motion.div
+              animate={{
+                y: [0, -20, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative z-20 w-full h-full"
+            >
+              <ElevatedEmblem />
+            </motion.div>
+
+            {/* Background halo */}
+            <div className="absolute inset-0 rounded-full bg-primary/10 blur-[100px] scale-150 -z-10" />
+          </div>
+
+          {/* Central CTA */}
+          <div className="mb-24 scale-110">
+            <Button asChild variant="default" size="xl" className="rounded-full px-12 py-8 text-lg font-bold shadow-[0_15px_30px_rgba(248,197,56,0.2)] group overflow-hidden relative">
+              <Link href="/contact" className="relative z-10 flex items-center gap-2">
+                Start the Journey
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* Bottom Content Split */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 w-full max-w-6xl mt-auto">
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-extrabold font-heading text-foreground mb-4 uppercase tracking-tighter">
+                Olympus: <br />
                 <span className="text-primary">The HR Icon</span>
-              </h1>
-              <p className="text-lg md:text-xl text-foreground/60 leading-relaxed mb-8 max-w-xl">
-                Olympus is an inaugural flagship HR initiative designed to bridge the critical gap between academic theory and industry practice.
+              </h2>
+              <p className="text-foreground/60 leading-relaxed max-w-sm">
+                An inaugural flagship HR initiative designed to bridge the critical gap between academic theory and industry practice.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild variant="default" size="xl" className="rounded-full">
-                  <Link href="/agenda">
-                    View Agenda
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="xl" className="rounded-full">
-                  <Link href="/contact">
-                    Contact & Register
-                  </Link>
-                </Button>
-              </div>
             </div>
 
-            {/* Right: Vision Card */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary rounded-3xl rotate-3 scale-105 opacity-20" />
-              <div className="relative bg-card rounded-3xl p-8 md:p-12 shadow-2xl border border-border">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                  <Eye className="h-10 w-10 text-primary" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold font-heading text-card-foreground mb-4">
-                  The Concept
-                </h2>
-                <p className="text-card-foreground/70 leading-relaxed">
-                  Olympus brings together students and professionals in a dynamic environment where real-world challenges meet cutting-edge HR innovation. We focus on interaction, not lectures.
-                </p>
-              </div>
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-extrabold font-heading text-foreground mb-4 uppercase tracking-tighter">
+                The <br />
+                <span className="text-primary">Concept</span>
+              </h2>
+              <p className="text-foreground/60 leading-relaxed max-w-sm">
+                Olympus brings together students and professionals in a dynamic environment where real-world challenges meet cutting-edge innovation.
+              </p>
+              <Link href="/agenda" className="inline-flex items-center gap-2 text-sm font-bold mt-4 hover:text-primary transition-colors text-foreground/80">
+                View detailed agenda <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
@@ -116,86 +161,79 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What Makes Olympus Different */}
-      <section className="min-h-screen flex flex-col justify-center py-16 md:py-24 bg-muted/30">
+      {/* What we're really good at - Reference Inspired Layout */}
+      <section className="min-h-screen flex flex-col justify-center py-20 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading text-foreground leading-tight tracking-tighter mb-4">
+              What Makes Olympus <br />
+              <span className="relative inline-block px-4">
+                Different
+                <svg className="absolute inset-0 -m-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] text-primary opacity-40 -z-10" viewBox="0 0 400 150" fill="none" preserveAspectRatio="none">
+                  <path d="M30,75 C30,30 200,30 370,75 C370,120 200,120 30,75" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  <path d="M50,85 C50,45 180,45 350,85 C350,125 180,125 50,85" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="10 5" />
+                </svg>
+              </span>
+            </h2>
+          </div>
 
-            {/* Left: Content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-foreground leading-tight mb-6">
-                What Makes Olympus
-                <br />
-                <span className="text-primary">Different</span>
-              </h2>
-
-              <p className="text-xl md:text-2xl font-semibold text-foreground/80 mb-6">
-                Real dilemmas. Real constraints.
-                <br />
-                Real leadership decisions.
-              </p>
-
-              <p className="text-foreground/60 mb-8 max-w-md leading-relaxed">
-                Unlike traditional case studies, Olympus puts you in the driver's seat
-                of complex HR scenarios where there are no perfect answers—only
-                thoughtful, ethical choices that reveal your leadership character.
-              </p>
-
-              <Button asChild variant="default" size="xl" className="rounded-full">
-                <Link href="/agenda">
-                  Explore the Agenda
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Right: Photo Grid with Diamond Center */}
-            <div className="relative w-full max-w-sm mx-auto">
-              {/* Diamond in center */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rotate-45 z-10" />
-
-              <div className="grid grid-cols-2">
-                {/* Top Left - with yellow circle accent */}
-                <div className="relative -mr-4 -mb-4 z-1">
-                  <div className="absolute -top-2 -left-2 w-16 h-16 rounded-full bg-primary -z-10" />
-                  <div className="w-full aspect-square rounded-full overflow-hidden bg-muted border-4 border-muted/30">
-                    <img
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face"
-                      alt="Professional woman"
-                      className="w-full h-full object-cover grayscale"
-                    />
-                  </div>
-                </div>
-
-                {/* Top Right */}
-                <div className="w-full aspect-square rounded-full overflow-hidden bg-muted -ml-4 -mb-4 z-2 border-4 border-muted/30">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                    alt="Professional man"
-                    className="w-full h-full object-cover grayscale"
-                  />
-                </div>
-
-                {/* Bottom Left */}
-                <div className="w-full aspect-square rounded-full overflow-hidden bg-muted -mr-4 -mt-4 z-3 border-4 border-muted/30">
-                  <img
-                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"
-                    alt="Professional woman smiling"
-                    className="w-full h-full object-cover grayscale"
-                  />
-                </div>
-
-                {/* Bottom Right */}
-                <div className="w-full aspect-square rounded-full overflow-hidden bg-muted -ml-4 -mt-4 z-4 border-4 border-muted/30">
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-                    alt="Professional man smiling"
-                    className="w-full h-full object-cover grayscale"
-                  />
-                </div>
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-6 md:gap-8 items-start relative max-w-7xl mx-auto md:min-h-[500px]">
+            {/* Card 1 - Pinned/Highest */}
+            <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl transform md:-translate-y-12 hover:scale-105 transition-all duration-300">
+              <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
+                {/* Abstract Artistic SVG - Tornado/Spiral */}
+                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
+                  <path d="M50 85 L50 20 M30 30 L70 30 M35 45 L65 45 M40 60 L60 60 M45 75 L55 75" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  <path d="M10 20 C10 10 90 10 90 20 C90 30 10 30 10 40 C10 50 90 50 90 60 C90 70 10 70 10 80" stroke="currentColor" strokeWidth="2" fill="none" strokeOpacity="0.3" />
+                </svg>
               </div>
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-4 uppercase leading-tight">Strategic <br /> Depth</h3>
+              <p className="text-secondary-foreground/60 text-sm leading-relaxed">
+                Analyzing the "organizational soul" and ethical gray areas.
+              </p>
             </div>
 
+            {/* Card 2 - Middle Offset */}
+            <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl hover:scale-105 transition-all duration-300 z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">Crisis <br /> Leadership</h3>
+              <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
+                {/* Abstract Artistic SVG - Magnet/U-shape */}
+                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
+                  <path d="M30 30 V60 C30 75 70 75 70 60 V30" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
+                  <rect x="25" y="20" width="10" height="15" fill="currentColor" rx="1" />
+                  <rect x="65" y="20" width="10" height="15" fill="currentColor" rx="1" />
+                  <path d="M40 70 H60" stroke="white" strokeWidth="2" strokeLinecap="round" className="opacity-20" />
+                </svg>
+              </div>
+              <p className="text-secondary-foreground/60 text-sm leading-relaxed">
+                Building leaders capable of acting when people matter the most.
+              </p>
+            </div>
+
+            {/* Card 3 - Lowest Offset */}
+            <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl transform md:translate-y-12 hover:scale-105 transition-all duration-300">
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">Meaningful <br /> Flow</h3>
+              <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
+                {/* Abstract Artistic SVG - Rainbow/Bridge */}
+                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
+                  <path d="M20 70 C20 30 80 30 80 70" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
+                  <path d="M35 70 C35 45 65 45 65 70" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                  <circle cx="20" cy="70" r="6" fill="currentColor" />
+                  <circle cx="80" cy="70" r="6" fill="currentColor" />
+                </svg>
+              </div>
+              <p className="text-secondary-foreground/60 text-sm leading-relaxed">
+                Creating lasting professional mentorships through structured growth.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-20 md:mt-32 text-center">
+            <Button asChild variant="secondary" size="xl" className="rounded-full shadow-xl">
+              <Link href="/agenda" className="flex items-center gap-2">
+                Explore the Full Agenda <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

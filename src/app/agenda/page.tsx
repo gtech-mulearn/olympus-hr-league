@@ -79,72 +79,15 @@ const fullAgenda = [
     },
 ];
 
+import { CurvedTimeline } from "@/components/CurvedTimeline";
+
 export default function AgendaPage() {
     return (
-        <div className="flex flex-col min-h-screen">
-            {/* Hero Header */}
-            <section className="py-20 bg-muted/30 border-b border-border">
-                <div className="container mx-auto px-4 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-background text-sm font-medium mb-6">
-                        The Flow
-                    </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold font-heading text-foreground mb-6">
-                        Event Agenda & Flow
-                    </h1>
-                    <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-                        A single-day immersive experience designed to bridge academic learning
-                        and industry practice through structured interaction.
-                    </p>
-                </div>
-            </section>
+        <div className="flex flex-col min-h-screen bg-[#0A0D10]">
+            {/* Immersive Curved Timeline Section */}
+            <CurvedTimeline />
 
-            {/* Agenda Section */}
-            <section className="py-16 md:py-24 grow">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <div className="space-y-16">
-                        {fullAgenda.map((phase, phaseIdx) => (
-                            <div key={phaseIdx} className="relative">
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                                        {phaseIdx + 1}
-                                    </div>
-                                    <h2 className="text-2xl md:text-3xl font-extrabold font-heading text-foreground uppercase tracking-tight">
-                                        {phase.phase}
-                                    </h2>
-                                </div>
 
-                                <div className="space-y-8 pl-5 md:pl-10 border-l-2 border-primary/20 ml-5">
-                                    {phase.items.map((item, itemIdx) => (
-                                        <div key={itemIdx} className="relative group">
-                                            {/* Timeline Dot */}
-                                            <div className="absolute -left-[27px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-primary transition-colors" />
-
-                                            <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-sm hover:shadow-md transition-shadow">
-                                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                                                            {item.icon}
-                                                        </div>
-                                                        <h3 className="text-xl font-bold text-foreground">
-                                                            {item.title}
-                                                        </h3>
-                                                    </div>
-                                                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">
-                                                        {item.time}
-                                                    </div>
-                                                </div>
-                                                <p className="text-card-foreground/70 leading-relaxed">
-                                                    {item.description}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Footer CTA */}
             <section className="py-20 bg-foreground text-background">
