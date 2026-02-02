@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Olympus – The HR League
+
+A flagship HR experience designed to bridge academic learning and industry practice through real-world sessions, expert-led discussions, and meaningful professional connections.
+
+**Organized by µLearn HR Interest Group**
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Package Manager**: Bun
+
+## Architecture
+
+This project follows **server-first architecture** with Next.js App Router:
+
+- **Route pages** are Server Components for optimal SSR and reduced JS bundle
+- **Interactive elements** are isolated into Client Components
+- **Configuration** is centralized in `src/config/`
+
+### Project Structure
+
+```
+src/
+├── app/                    # Route pages (Server Components)
+│   ├── page.tsx           # Home
+│   ├── about/             # About Olympus
+│   ├── agenda/            # Event agenda
+│   ├── contact/           # Contact form
+│   ├── participants/      # Target audience
+│   └── sponsors/          # Partnership info
+├── components/            # Reusable components
+│   ├── home/              # Home page client components
+│   ├── about/             # About page client components
+│   ├── contact/           # Contact page client components
+│   ├── participants/      # Participants page client components
+│   ├── sponsors/          # Sponsors page client components
+│   └── ui/                # Shared UI components
+├── config/                # Site configuration
+│   └── site.ts            # Centralized site metadata
+└── lib/                   # Utilities
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ or Bun
+- Git
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/gtech-mulearn/olympus-hr-league.git
+cd olympus-hr-league
+
+# Install dependencies
+bun install
+
+# Run development server
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start development server |
+| `bun run build` | Build for production |
+| `bun run start` | Start production server |
+| `bun run lint` | Run Biome linter |
+| `bun run format` | Format code with Biome |
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Description |
+|-------|-------------|
+| `/` | Home page with hero, Why Olympus, What to Expect, and Recognition sections |
+| `/about` | About Olympus, vision pillars, and differentiators |
+| `/agenda` | Full event schedule with curved timeline |
+| `/participants` | Target audience and participant benefits |
+| `/sponsors` | Partnership opportunities and visibility impact |
+| `/contact` | Contact information and inquiry form |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Build and deploy to any platform that supports Next.js:
 
-## Deploy on Vercel
+```bash
+bun run build
+bun run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## License
+
+© 2026 µLearn. All rights reserved.
