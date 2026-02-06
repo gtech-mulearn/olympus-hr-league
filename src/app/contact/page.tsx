@@ -32,7 +32,7 @@ export default function ContactPage() {
                                     <div className="group">
                                         <h3 className="text-3xl font-black uppercase tracking-tight mb-2">Prapanch J</h3>
                                         <div className="flex flex-col gap-1">
-                                            <a href="mailto:prjmannar@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">prapanch@mulearn.org</a>
+                                            <a href="mailto:prjmannar@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">prjmannar@gmail.com</a>
                                             <a href="tel:+919446447965" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">+91 94464 47965</a>
                                             <a href="https://www.linkedin.com/in/prapanch-j-86bb46334" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mt-2 text-primary font-bold hover:underline">
                                                 <Linkedin className="h-5 w-5" />
@@ -44,7 +44,7 @@ export default function ContactPage() {
                                     <div className="group">
                                         <h3 className="text-3xl font-black uppercase tracking-tight mb-2">Diya Benny</h3>
                                         <div className="flex flex-col gap-1">
-                                            <a href="mailto:diyabenny2k3@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">diya@mulearn.org</a>
+                                            <a href="mailto:diyabenny2k3@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">diyabenny2k3@gmail.com</a>
                                             <a href="tel:+918301073978" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">+91 83010 73978</a>
                                             <a href="https://www.linkedin.com/in/diyabenny" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mt-2 text-primary font-bold hover:underline">
                                                 <Linkedin className="h-5 w-5" />
@@ -56,7 +56,7 @@ export default function ContactPage() {
                                     <div className="group">
                                         <h3 className="text-3xl font-black uppercase tracking-tight mb-2">Nandana Vipin</h3>
                                         <div className="flex flex-col gap-1">
-                                            <a href="mailto:nandanavipin2022@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">nandana@mulearn.org</a>
+                                            <a href="mailto:nandanavipin2022@gmail.com" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">nandanavipin2022@gmail.com</a>
                                             <a href="tel:+917559910963" className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors">+91 75599 10963</a>
                                             <a href="https://www.linkedin.com/in/nandana-vipin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mt-2 text-primary font-bold hover:underline">
                                                 <Linkedin className="h-5 w-5" />
