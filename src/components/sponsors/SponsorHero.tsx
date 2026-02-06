@@ -76,7 +76,7 @@ export function SponsorHero() {
 
                     <div className="mt-12 flex justify-center">
                         <Button asChild size="xl" className="rounded-2xl px-12 h-16 text-lg font-bold group">
-                            <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                            <a href="mailto:prjmannar@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                                 Become a Partner
                                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                             </a>
