@@ -25,7 +25,7 @@ export default function SponsorsPage() {
                     </h2>
                     <div className="flex justify-center">
                         <Button asChild size="xl" className="rounded-2xl px-12 h-16 text-lg font-bold group">
-                            <a href="mailto:prjmannar@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                            <a href="https://forms.gle/rAWMLJReMmoKVm4K8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                                 Become a Partner
                                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                             </a>
