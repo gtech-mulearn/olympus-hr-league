@@ -4,7 +4,7 @@ import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactFormSection } from "@/components/contact/ContactFormSection";
 
 const socialLinks = [
-    { icon: <Instagram className="h-5 w-5" />, href: "#" },
+    { icon: <Instagram className="h-5 w-5" />, href: "https://instagram.com/olympus.mulearn" },
     { icon: <Twitter className="h-5 w-5" />, href: "#" },
     { icon: <Linkedin className="h-5 w-5" />, href: "#" },
     { icon: <Github className="h-5 w-5" />, href: "#" },

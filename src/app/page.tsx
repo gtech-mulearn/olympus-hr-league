@@ -53,7 +53,7 @@ export default function HomePage() {
                     alt={logo.alt}
                     width={200}
                     height={logo.height}
-                    className="h-8 md:h-10 w-auto object-contain"
+                    className="h-6 md:h-10 w-auto object-contain"
                     quality={100}
                     priority
                   />
