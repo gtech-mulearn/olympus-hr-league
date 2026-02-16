@@ -17,13 +17,13 @@ const logos = [
     src: CARESTACK_LOGO,
     alt: "CareStack Logo",
     height: 36,// Adjust based on your logo's optimal display size
-    link: "https://carestack.com/" 
+    link: "https://carestack.com/"
   },
   {
     src: HR_EVOLVE_LOGO,
     alt: "HR Evolve Logo",
     height: 40, // Slightly taller for this logo
-    link: "https://hrevolve.org/" 
+    link: "https://hrevolve.org/"
   },
   {
     src: GTECH_INDIA_LOGO,
@@ -31,7 +31,7 @@ const logos = [
     height: 36,
     link: "https://www.gtechindia.org/"
   },
-  
+
   {
     src: MULEARN_LOGO,
     alt: "Mulearn Logo",
@@ -44,15 +44,15 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative md:min-h-screen flex flex-col justify-center pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative min-h-svh md:min-h-screen flex flex-col justify-center pt-28 pb-10 md:pt-48 md:pb-32 overflow-hidden">
         {/* Yellow Semi-Circle Background */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 w-[150vw] h-[60vh] md:w-[150vw] md:h-[90vh] lg:w-[100vw] rounded-t-full bg-primary z-0" />
-        
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 md:translate-y-1/4 w-[180vw] aspect-2/1 md:w-[150vw] md:h-[90vh] md:aspect-none lg:w-[100vw] rounded-t-full bg-primary z-0" />
+
         {/* Birds Lottie Animation */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 z-1">
           <LottiePlayer src="/animations/birdies.lottie" invert />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Fixed logo display section */}
@@ -75,29 +75,25 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-            
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold font-heading text-foreground mb-4">
+
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold font-heading text-foreground mb-2 md:mb-4">
               Olympus: The HR Icon
             </h1>
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-2 mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1.5 md:py-2 mb-3 md:mb-4">
               <p className="text-sm md:text-2xl font-semibold">
                 Where Leaders Learn to Lead People
               </p>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground/80 mb-6">
+            <h2 className="text-xl md:text-3xl font-bold font-heading text-foreground/80 mb-4 md:mb-6">
               Flagship HR Experience 2026
             </h2>
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-foreground/70">
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-6 md:mb-8 text-foreground/70">
               <div className="flex items-start gap-1 md:gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                <span>200 Attendees (120 Students + 80 Professionals)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-primary" />
-                <span>µLearn HR Interest Group</span>
+                <span className="text-sm md:text-base">200 Attendees (120 Students + 80 Professionals)</span>
               </div>
             </div>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto mb-6 md:mb-8 px-4 md:px-0">
               Olympus is a flagship HR experience designed to bridge academic learning and industry practice through real-world sessions, expert-led discussions, and meaningful professional connections.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
