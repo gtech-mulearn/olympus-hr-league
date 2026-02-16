@@ -18,9 +18,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Olympus – The HR Icon | µLearn",
-  description:
-    "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://olympus.mulearn.org'),
+  title: {
+    default: "Olympus – The HR Icon | µLearn",
+    template: "%s | Olympus – The HR Icon"
+  },
+  description: "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
   keywords: [
     "HR Icon",
     "Olympus",
@@ -29,13 +32,50 @@ export const metadata: Metadata = {
     "HR Challenge",
     "Management",
     "Students",
+    "Kerala",
+    "India",
   ],
-  authors: [{ name: "µLearn HR Interest Group" }],
+  authors: [{ name: "µLearn HR Interest Group", url: "https://mulearn.org" }],
+  creator: "µLearn",
+  publisher: "µLearn Foundation",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Olympus – The HR Icon",
-    description:
-      "Bridge academic learning with real-world corporate decision-making",
+    description: "Bridge academic learning with real-world corporate decision-making",
+    url: "/",
+    siteName: "Olympus – The HR Icon",
+    images: [
+      {
+        url: "/OG-Image.png",
+        width: 1200,
+        height: 630,
+        alt: "Olympus – The HR Icon",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olympus – The HR Icon",
+    description: "Where Leaders Learn to Lead People",
+    images: ["/OG-Image.png"],
+    creator: "@mulearn", // Update if there is a specific handle
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
