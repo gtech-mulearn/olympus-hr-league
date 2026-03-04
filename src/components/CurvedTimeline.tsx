@@ -19,65 +19,79 @@ const phases: Phase[] = [
   {
     id: "01",
     time: "09:00 AM – 09:30 AM",
-    title: "Registration & Icebreaker",
+    title: "Registration",
     description:
-      "Registration followed by an interactive Icebreaker session to build functional units.",
+      "Arrival, check‑in and informal mingling ahead of the inauguration ceremony.",
   },
   {
     id: "02",
-    time: "10:00 AM – 11:05 AM",
-    title: "Session 1: How To Hire",
+    time: "09:20 AM – 09:30 AM",
+    title: "Introduction & Welcome",
     description:
-      "Hiring/promotion criteria, live resume analysis, and mock interviews with professionals.",
+      "Small inauguration ceremony and official opening remarks.",
   },
   {
     id: "03",
-    time: "11:05 AM – 11:20 AM",
-    title: "Networking Break",
+    time: "09:30 AM – 10:00 AM",
+    title: "The Icebreaker",
     description:
-      "Coffee and cross-pollination between students and professionals.",
+      "Facilitated activity led by Vishnu Prasad M V (Senior HR Manager, Srishti Innovative) to get everyone talking.",
   },
   {
     id: "04",
-    time: "11:20 AM – 12:30 PM",
-    title: "Session 2: Employee Life Cycle",
+    time: "10:00 AM – 11:00 AM",
+    title: "How to Hire",
     description:
-      "",
+      "Smitha S P (Senior Manager, Talent Acquisition CareStack) covers hiring criteria, resume analysis and mock interviews.",
   },
   {
     id: "05",
-    time: "12:30 PM – 01:25 PM",
-    title: "Working Power Lunch",
+    time: "11:00 AM – 11:20 AM",
+    title: "High‑Intensity Networking Break",
     description:
-      "Industry experts sit with students for open career and industry discussions.",
+      "Quick coffee break designed for cross‑pollination between students and professionals.",
   },
   {
     id: "06",
-    time: "01:30 PM – 02:30 PM",
-    title: "Session 3: Tech & AI Lab",
+    time: "11:20 AM – 12:20 PM",
+    title: "HR in AI Era",
     description:
-      "",
+      "Justin George (Director & Head People Systems, UST) explores the impact of AI on HR practices.",
   },
   {
     id: "07",
-    time: "02:30 PM – 03:30 PM",
-    title: "Session 4: Strategic Forecasting",
+    time: "12:20 PM – 01:25 PM",
+    title: "Working Power Lunch",
     description:
-      "Expert panel discussing the 2035 workforce, AI-human hybrids, and hyper-personalized growth.",
+      "Lunch‑with‑experts format – a networking meal where students sit with professionals to discuss careers and industry topics.",
   },
   {
     id: "08",
-    time: "03:30 PM – 04:00 PM",
-    title: "Employer Branding",
+    time: "01:30 PM – 02:30 PM",
+    title: "Strategic Forecasting Panel",
     description:
-      "Understanding how organizational 'soul' and online presence attract top talent.",
+      "Panel moderated by Vishnu Prasad M V with industry leaders debating workforce planning and succession through 2035.",
   },
   {
     id: "09",
+    time: "02:30 PM – 03:30 PM",
+    title: "Employee Lifecycle",
+    description:
+      "Deep dive session led by Deepa Nair (Senior Manager, 6D Technologies) on stages from hire to retire.",
+  },
+  {
+    id: "10",
+    time: "03:30 PM – 04:00 PM",
+    title: "Employer Branding",
+    description:
+      "Nadia Baba (Manager, HR Programs CareStack) discusses how culture and online presence attract talent.",
+  },
+  {
+    id: "11",
     time: "04:00 PM – 04:30 PM",
     title: "Closing Ceremony",
     description:
-      "Acknowledgements, group photos, and networking through LinkedIn and other social media platforms.",
+      "Experience sharing, thank‑you notes and a final call‑to‑action to connect on LinkedIn and complete the external branding loop.",
   },
 ];
 
@@ -160,6 +174,9 @@ export const CurvedTimeline = () => {
             THE OLYMPUS JOURNEY: <br />
             <span className="text-primary italic">CHRONOLOGICAL FLOW</span>
           </h2>
+          <p className="text-gray-300 uppercase tracking-wide mb-4">
+            07th March 2026 – CareStack, Embassy Taurus Techzone
+          </p>
           <p className="text-gray-400 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed opacity-50 px-4">
             A meticulously structured immersive experience designed to rotate
             through the core pillars of modern people management.
