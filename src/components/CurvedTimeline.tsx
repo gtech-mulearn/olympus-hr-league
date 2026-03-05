@@ -39,7 +39,7 @@ const phases: Phase[] = [
   {
     id: "04",
     time: "10:00 AM – 11:00 AM",
-    title: "How to Hire",
+    title: "How do product companies hire - and why does it matter?",
     description:
       "Smitha S P (Senior Manager, Talent Acquisition CareStack) covers hiring criteria, resume analysis and mock interviews.",
   },
@@ -83,7 +83,7 @@ const phases: Phase[] = [
     time: "03:30 PM – 04:00 PM",
     title: "Employer Branding",
     description:
-      "Nadia Baba (Manager, HR Programs CareStack) discusses how culture and online presence attract talent.",
+      "Nadia Baba (Manager, HR Programs CareStack) discusses why some companies don’t hire, but get chosen.",
   },
   {
     id: "11",
