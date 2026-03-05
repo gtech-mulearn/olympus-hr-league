@@ -12,7 +12,12 @@ interface ImageModalProps {
   onClose: () => void;
 }
 
-export function ImageModal({ isOpen, src, alt = "", onClose }: ImageModalProps) {
+export function ImageModal({
+  isOpen,
+  src,
+  alt = "",
+  onClose,
+}: ImageModalProps) {
   // prevent scrolling
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -54,13 +59,10 @@ export function ImageModal({ isOpen, src, alt = "", onClose }: ImageModalProps) 
                 <X className="h-5 w-5 text-white" />
               </button>
 
-              <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 ratio */}
-                <Image
-                  src={src}
-                  alt={alt}
-                  fill
-                  className="object-contain"
-                />
+              <div className="relative w-full h-0 pb-[56.25%]">
+                {" "}
+                {/* 16:9 ratio */}
+                <Image src={src} alt={alt} fill className="object-contain" />
               </div>
             </motion.div>
           </div>

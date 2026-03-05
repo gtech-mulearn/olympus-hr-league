@@ -16,11 +16,12 @@ import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
 import { RegisterButton } from "@/components/RegisterButton";
 import { Button } from "@/components/ui/button";
 import LottiePlayer from "@/components/ui/Lottieplayer";
+import { PartnersSection } from "@/components/PartnersSection";
 
 const CARESTACK_LOGO = "/assets/carestack-logo.webp";
 const HR_EVOLVE_LOGO = "/assets/hr-evolve-logo.webp";
 const MULEARN_LOGO = "/assets/mulearn-foundation-logo-black.png";
-const GTECH_INDIA_LOGO = "/assets/gtech-logo.svg";
+const HNR_LOGO = "/assets/h&r.png";
 
 // Fixed logos array structure
 const logos = [
@@ -37,17 +38,17 @@ const logos = [
     link: "https://hrevolve.org/",
   },
   {
-    src: GTECH_INDIA_LOGO,
-    alt: "Gtech India Logo",
-    height: 36,
-    link: "https://www.gtechindia.org/",
-  },
-
-  {
     src: MULEARN_LOGO,
     alt: "Mulearn Logo",
     height: 36,
     link: "https://mulearn.org/",
+  },
+
+  {
+    src: HNR_LOGO,
+    alt: "HNR Logo",
+    height: 50,
+    link: "",
   },
 ];
 
@@ -354,6 +355,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Partners Showcase (landing page) */}
+      <PartnersSection />
 
       {/* Recognition */}
       {/* Recognition */}

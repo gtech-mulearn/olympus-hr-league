@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, X } from "lucide-react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useRegistrationStatus } from "@/hooks/useRegistrationStatus";
 
 interface RegistrationClosedPopupProps {
   isOpen: boolean;
@@ -13,6 +14,8 @@ export function RegistrationClosedPopup({
   isOpen,
   onClose,
 }: RegistrationClosedPopupProps) {
+  const { isClosed } = useRegistrationStatus();
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -64,28 +67,33 @@ export function RegistrationClosedPopup({
                   </button>
                   <Calendar className="h-12 w-12 text-white mx-auto mb-3" />
                   <h2 className="text-2xl font-bold text-white mb-2">
-                    Registration Opening Soon
+                    {isClosed
+                      ? "Registration Closed"
+                      : "Registration Opening Soon"}
                   </h2>
                 </div>
 
                 {/* Content */}
                 <div className="px-6 py-8">
                   <p className="text-foreground/70 text-center mb-6">
-                    Registration for Olympus: The HR Icon opens on
+                    {isClosed
+                      ? "Registration for Olympus: The HR Icon is now closed."
+                      : "Registration for Olympus: The HR Icon opens on"}
                   </p>
 
                   <div className="bg-secondary/10 border-2 border-primary rounded-lg py-6 px-4 text-center mb-6">
                     <p className="text-sm font-medium text-foreground/60 mb-2">
-                      Opens On
+                      {isClosed ? "Closed On" : "Opens On"}
                     </p>
                     <p className="text-3xl font-bold text-primary">
-                      18 Feb 2026
+                      {isClosed ? "03 Mar 2026" : "18 Feb 2026"}
                     </p>
                   </div>
 
                   <p className="text-foreground/60 text-center text-sm mb-6">
-                    Come back on February 18th to secure your spot for this
-                    flagship HR experience.
+                    {isClosed
+                      ? "Thank you for your interest! We look forward to seeing the registered participants."
+                      : "Come back on February 18th to secure your spot for this flagship HR experience."}
                   </p>
 
                   {/* Closing Button */}

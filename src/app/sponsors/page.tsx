@@ -42,7 +42,7 @@ export default function SponsorsPage() {
             </Button>
             {/* contact email for partners */}
             <p className="mt-4 text-sm">
-              Questions? Email us at{' '}
+              Questions? Email us at{" "}
               <a
                 href="mailto:partners@mulearn.org"
                 className="text-primary underline"

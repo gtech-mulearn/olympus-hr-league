@@ -27,8 +27,7 @@ const phases: Phase[] = [
     id: "02",
     time: "09:20 AM – 09:30 AM",
     title: "Introduction & Welcome",
-    description:
-      "Small inauguration ceremony and official opening remarks.",
+    description: "Small inauguration ceremony and official opening remarks.",
   },
   {
     id: "03",
