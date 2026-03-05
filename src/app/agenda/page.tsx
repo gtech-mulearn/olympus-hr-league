@@ -28,7 +28,7 @@ export default function AgendaPage() {
     {
       name: "Smitha S P",
       role: "Senior Manager, Talent Acquisition CareStack",
-      session: "How to Hire (10:00 AM – 11:00 AM)",
+      session: "How do product companies hire - and why does it matter? (10:00 AM – 11:00 AM)",
       image: "/assets/speakers/smitha_sp.jpeg",
     },
     {
