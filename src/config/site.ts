@@ -15,8 +15,6 @@ export const siteConfig = {
   ],
   authors: [{ name: "µLearn HR Interest Group" }],
   links: {
-    registration: "https://makemypass.com/event/olympus",
-    partnerRegistration: "https://forms.gle/rAWMLJReMmoKVm4K8",
     linkedin: "https://linkedin.com/company/gtechmulearn/",
     youtube: "https://youtube.com/c/mulearn",
     facebook: "https://facebook.com/gtechmulearn",

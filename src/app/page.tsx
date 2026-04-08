@@ -10,10 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
-
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
-import { RegisterButton } from "@/components/RegisterButton";
 import { Button } from "@/components/ui/button";
 import LottiePlayer from "@/components/ui/Lottieplayer";
 import { PartnersSection } from "@/components/PartnersSection";
@@ -102,7 +99,7 @@ export default function HomePage() {
               </p>
             </div>
             <h2 className="text-xl md:text-3xl font-bold font-heading text-foreground/80 mb-4 md:mb-6">
-              Flagship HR Experience 2026
+              Olympus 2026 Highlights
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-6 mb-6 md:mb-8 text-foreground/70">
               <div className="flex items-start gap-1 md:gap-2">
@@ -117,10 +114,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="white" size="xl">
-                <RegisterButton className="inline-flex items-center">
-                  Register Now
+                <Link href="/gallery" className="inline-flex items-center">
+                  Explore Moments
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </RegisterButton>
+                </Link>
               </Button>
               <Button asChild variant="secondary" size="xl">
                 <Link href="/agenda">View Full Agenda</Link>
@@ -416,13 +413,7 @@ export default function HomePage() {
                 size="xl"
                 className="rounded-full px-8"
               >
-                <a
-                  href={siteConfig.links.registration}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Be Part of Founding Cohort
-                </a>
+                <Link href="/gallery">Relive the Event</Link>
               </Button>
               <Button
                 asChild
@@ -430,8 +421,8 @@ export default function HomePage() {
                 size="xl"
                 className="rounded-full px-8"
               >
-                <Link href="/agenda">
-                  View Agenda
+                <Link href="/contact">
+                  Connect With Team
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

@@ -188,7 +188,7 @@ export function ContactFormSection() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                "Participant Registration",
+                "Participation (Next Edition)",
                 "Partnership / Sponsorship",
                 "Speaking Slot",
                 "Volunteer Opportunities",

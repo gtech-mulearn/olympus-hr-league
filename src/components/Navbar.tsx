@@ -5,12 +5,12 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { RegisterButton } from "./RegisterButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/agenda", label: "Agenda" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/participants", label: "Participants" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/partners", label: "Partners" },
@@ -23,7 +23,7 @@ export function Navbar() {
 
   return (
     <header className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none">
-      <div className="container max-w-5xl px-4 pointer-events-auto">
+      <div className="container max-w-7xl px-4 pointer-events-auto">
         <div className="bg-white/90 md:bg-white/70 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-2 md:py-3 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
@@ -49,9 +49,12 @@ export function Navbar() {
 
           {/* CTA Button + Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <RegisterButton className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95">
-              Register Now
-            </RegisterButton>
+            <Link
+              href="/gallery"
+              className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95"
+            >
+              Gallery
+            </Link>
 
             {/* Mobile Menu Button */}
             <button

@@ -25,3 +25,15 @@ export const sharedMetadata: Metadata = {
     follow: true,
   },
 };
+
+sharedMetadata.description =
+  "Olympus - The HR Icon was a flagship HR and leadership experience. Explore the highlights, speakers, and gallery moments from Olympus 2026.";
+
+if (sharedMetadata.openGraph) {
+  sharedMetadata.openGraph.description =
+    "Relive Olympus 2026 through sessions, speakers, and gallery highlights";
+}
+
+if (sharedMetadata.twitter) {
+  sharedMetadata.twitter.description = "Highlights, speakers, and moments from Olympus 2026";
+}

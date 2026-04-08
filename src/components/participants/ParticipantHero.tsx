@@ -17,9 +17,9 @@ const gains = [
     detail: "Face-to-face mentorship with seasoned global HR leaders.",
   },
   {
-    label: "Founding",
-    sublabel: "Cohort Status",
-    detail: "Exclusive recognition as a pioneer in the Olympus ecosystem.",
+    label: "Olympus",
+    sublabel: "Alumni Network",
+    detail: "Continued community access with peers, mentors, and collaborators.",
   },
   {
     label: "Strategic",

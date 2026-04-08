@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import Link from "next/link";
 import { SocialProofSection } from "@/components/sponsors/SocialProofSection";
 import { SponsorHero } from "@/components/sponsors/SponsorHero";
 import { VisibilityCards } from "@/components/sponsors/VisibilityCards";
@@ -30,15 +30,10 @@ export default function SponsorsPage() {
               size="xl"
               className="rounded-2xl px-12 h-16 text-lg font-bold group"
             >
-              <a
-                href={siteConfig.links.partnerRegistration}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3"
-              >
-                Become a Partner
+              <Link href="/contact" className="flex items-center gap-3">
+                Partner Next Edition
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </Button>
             {/* contact email for partners */}
             <p className="mt-4 text-sm">

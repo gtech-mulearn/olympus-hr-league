@@ -83,6 +83,18 @@ export const metadata: Metadata = {
   },
 };
 
+metadata.description =
+  "Olympus - The HR Icon was a flagship HR and leadership experience by muLearn HR Interest Group. Explore Olympus 2026 sessions, speakers, and gallery highlights.";
+
+if (metadata.openGraph) {
+  metadata.openGraph.description =
+    "Relive Olympus 2026 through sessions, speakers, and gallery highlights";
+}
+
+if (metadata.twitter) {
+  metadata.twitter.description = "Highlights, speakers, and moments from Olympus 2026";
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{

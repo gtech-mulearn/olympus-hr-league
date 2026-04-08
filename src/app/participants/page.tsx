@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { AudienceShowcase } from "@/components/participants/AudienceShowcase";
 import { ParticipantHero } from "@/components/participants/ParticipantHero";
-import { RegisterButton } from "@/components/RegisterButton";
 import { Button } from "@/components/ui/button";
 
 export default function ParticipantsPage() {
@@ -25,10 +25,10 @@ export default function ParticipantsPage() {
             size="xl"
             className="rounded-full px-12 h-16 text-lg font-bold group"
           >
-            <RegisterButton className="flex items-center gap-3">
-              Register Now
+            <Link href="/gallery" className="flex items-center gap-3">
+              Explore Event Gallery
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </RegisterButton>
+            </Link>
           </Button>
         </div>
       </section>

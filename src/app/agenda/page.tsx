@@ -2,10 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CurvedTimeline } from "@/components/CurvedTimeline";
-import { RegisterButton } from "@/components/RegisterButton";
 import { Button } from "@/components/ui/button";
-import { useRegistrationStatus } from "@/hooks/useRegistrationStatus";
 import {
   Card,
   CardHeader,
@@ -16,7 +15,6 @@ import { ImageModal } from "@/components/ImageModal";
 
 export default function AgendaPage() {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
-  const { isOpen: isRegistrationOpen } = useRegistrationStatus();
 
   const speakers = [
     {
@@ -211,7 +209,7 @@ export default function AgendaPage() {
       <section className="py-20 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">
-            Be part of the founding cohort of Olympus
+            Want the highlights from each session?
           </h2>
           <Button
             asChild
@@ -219,9 +217,7 @@ export default function AgendaPage() {
             size="xl"
             className="rounded-full px-10"
           >
-            <RegisterButton>
-              {isRegistrationOpen ? "Register Now" : "Registration Closed"}
-            </RegisterButton>
+            <Link href="/gallery">View Event Moments</Link>
           </Button>
         </div>
       </section>
